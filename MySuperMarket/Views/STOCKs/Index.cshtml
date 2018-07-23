@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MySuperMarket.Models.STOCK>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.STOCK_NUM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STOCK_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXPENSE.TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLAN.PRODUCT_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT.PRODUCT_ID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.STOCK_NUM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STOCK_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPENSE.TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLAN.PRODUCT_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT.PRODUCT_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.STOCK_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.STOCK_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.STOCK_ID })
+        </td>
+    </tr>
+}
+
+</table>

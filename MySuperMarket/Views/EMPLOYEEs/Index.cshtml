@@ -1,0 +1,301 @@
+﻿@model IEnumerable<MySuperMarket.Models.EMPLOYEE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null; 
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>超市管理系统 v0.1</title>
+    <link rel="stylesheet" href="/Content/assets/libs/layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo" style="color:white">
+                <b>超市管理系统 v0.1</b>
+            </div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left" style="margin-top: 20px">
+                <span class="layui-breadcrumb">
+                    <a href="">欢迎</a>
+                    <a href="">销售管理</a>
+                    <a href="">商品信息管理</a>
+                </span>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="/Content/assets/image/avatar.PNG" class="layui-nav-img">
+                        管理员
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">退出登录</a></li>
+            </ul>
+        </div>
+        <!-- 导航栏区域 -->
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">销售管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="01_today_sale.html">今日销售</a></dd>
+                            <dd><a href="02_sale_record.html">销售报表</a></dd>
+                            <dd class="layui-this"><a href="03_info_manage.html">商品信息管理</a></dd>
+                            <dd><a href="04_income_expenses_manage.html">收支管理</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">货架管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="05_shelves_partiton.html">货架分区</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">库存管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="06_stock_record.html">进货记录</a></dd>
+                            <dd><a href="07_inventory_check.html">库存核查</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">供应链管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="08_supply_record.html">供货记录</a></dd>
+                            <dd><a href="09_supplier_info.html">供货商信息</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">赞助商管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="10_sponsor_record.html">赞助记录</a></dd>
+                            <dd><a href="11_sponsor_info.html">赞助商信息</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">员工管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="12_employee_record.html"><i class="layui-icon layui-icon-tips" style="font-weight: bold"></i>&ensp;员工记录</a></dd>
+                            <dd><a href="13_salary_manage.html"><i class="layui-icon layui-icon-console" style="font-weight: bold"></i>&ensp;工资管理</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">会员管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="14_vip_info.html"><i class="layui-icon layui-icon-tips" style="font-weight: bold"></i>&ensp;会员信息</a></dd>
+                            <dd><a href="15_discount_manage.html"><i class="layui-icon layui-icon-note" style="font-weight: bold"></i>&ensp;折扣管理</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body" style="padding: 20px 20px 20px 20px; background-color: #F2F2F2;">
+            <!-- 内容主体区域 -->
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header" style="padding: 10px 20px; font-size: 18px; font-weight: bold">
+                        商品信息总览
+                    </div>
+                    <div class="layui-card-body">
+                        <form class="layui-form layui-form-pane" action="" style="padding-top: 6px">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">键值类型</label>
+                                    <div class="layui-input-inline">
+                                        <select name="type" lay-filter="aihao">
+                                            <option value="">-请选择-</option>
+                                            <option value="0">商品编码</option>
+                                            <option value="1">商品名称</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">输入键值</label>
+                                    <div class="layui-input-inline">
+                                        <input name="search_input" autocomplete="off" placeholder="请输入" class="layui-input" type="text">
+                                    </div>
+                                </div>
+                                <button id="info-btn-search" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                                <button type="button" id="info-btn-add" class="layui-btn icon-btn"><i class="layui-icon">&#xe654;</i>添加</button>
+                            </div>
+                        </form>
+                        <!-- 主体表格
+                         -->
+                        <table class="layui-hide" id="info_table"></table>
+                        <!--添加弹出框-->
+                        <form id="info-add-form" class="layui-hide">
+                            <div style="margin: 20px;">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品编码</label>
+                                    <div class="layui-input-inline">
+                                        <input name="sponsorid" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品名称</label>
+                                    <div class="layui-input-inline">
+                                        <input name="sponsorname" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">保质期</label>
+                                    <div class="layui-input-inline">
+                                        <input name="phone" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品原价</label>
+                                    <div class="layui-input-inline">
+                                        <input name="phone" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">超市定价</label>
+                                    <div class="layui-input-inline">
+                                        <input name="phone" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn layui-btn-normal" lay-filter="sale-search-form-submit" lay-submit>添加</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--修改弹出框-->
+                        <form id="info-update-form" class="layui-hide">
+                            <div style="margin: 20px;">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品编码</label>
+                                    <div class="layui-input-inline">
+                                        <input name="sponsorid" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品名称</label>
+                                    <div class="layui-input-inline">
+                                        <input name="sponsorname" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">保质期</label>
+                                    <div class="layui-input-inline">
+                                        <input name="phone" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品原价</label>
+                                    <div class="layui-input-inline">
+                                        <input name="phone" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">超市定价</label>
+                                    <div class="layui-input-inline">
+                                        <input name="phone" placeholder="请输入" type="text" class="layui-input"
+                                               lay-verify="required" required />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn layui-btn-normal" lay-filter="sale-search-form-submit" lay-submit>保存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-footer">
+                <!-- 底部固定区域 -->
+                小分队团队 - 底部固定区域
+            </div>
+        </div>
+        <script src="/Content/assets/libs/layui/layui.js"></script>
+        <script>
+            //JavaScript代码区域
+            layui.use(['element', 'layer'], function () {
+                var element = layui.element, layer = layui.layer;
+
+            });
+        </script>
+        <script type="text/html" id="tool_bar">
+            <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+        <script>
+            layui.use('table', function () {
+                var table = layui.table;
+                var $ = layui.jquery;
+                table.render({
+                    elem: '#info_table'
+                    , url: '/EMPLOYEEs/getJson/' //数据接口
+                    , method:"post"
+                    , cellMinWidth: 160
+                    //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                    //width 支持：数字、百分比和不填写。
+                    //你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                    , cols: [[
+                        { field: 'EMPLOYEE_ID', title: '商品编码', sort: true }
+                        , { field: 'EMPLOYEE_NAME', title: '商品名', sort: true }
+                        , { field: 'SALARY', title: '保质期', sort: true }
+                        , { field: 'SEX', title: '原价', sort: true }
+                        , { field: 'PHONE_NUMBER', title: '售价', sort: true }
+                        , { align: 'center', toolbar: '#tool_bar', title: '操作' }
+                    ]]
+
+                });
+                //添加按钮点击事件
+                $(document).on('click', '#info-btn-add', function () {
+                    layer.open({
+                        type: 1,
+                        title: '添加商品信息',
+                        area: '400px',
+                        offset: 'auto',
+                        content: $('#info-add-form').html()
+                    });
+                });
+                // 工具条点击事件
+                table.on('tool(info_table)', function (obj) {
+                    var data = obj.data;
+                    if (obj.event === 'edit') { //修改
+                        layer.open({
+                            type: 1,
+                            title: '供货商信息修改',
+                            area: '400px',
+                            offset: 'auto',
+                            content: $('#info-update-form').html()
+                        });
+                    } else if (obj.event === 'del') { //删除
+                        layer.confirm('确定要删除吗？', { title: '提示' }, function (index) {
+                            layer.close(index);
+                            //向服务端发送删除指令
+                        });
+                    }
+                });
+            });
+        </script>
+
+</body>
+</html>
