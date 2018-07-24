@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -19,11 +19,6 @@ namespace MySuperMarket.Controllers
         {
             var vIP = db.VIP.Include(v => v.EMPLOYEE);
             return View(vIP.ToList());
-        }
-
-        public JsonResult getJson()
-        {
-            return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.ToList() });
         }
 
         // GET: VIPs/Details/5
@@ -49,8 +44,8 @@ namespace MySuperMarket.Controllers
         }
 
         // POST: VIPs/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // 为了防止“过多发布”攻击，请启用要绑定到的特定属性，有关 
+        // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "VIP_ID,EMPLOYEE_ID,CREDITS,VIP_NAME,SEX,PHONE_NUMBER")] VIP vIP)
@@ -83,8 +78,8 @@ namespace MySuperMarket.Controllers
         }
 
         // POST: VIPs/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // 为了防止“过多发布”攻击，请启用要绑定到的特定属性，有关 
+        // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "VIP_ID,EMPLOYEE_ID,CREDITS,VIP_NAME,SEX,PHONE_NUMBER")] VIP vIP)
@@ -132,6 +127,47 @@ namespace MySuperMarket.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public JsonResult getJson()
+        {
+            //return Json(db.EMPLOYEE.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.ToList() });
+            // return Json(new{ code=0, msg="", count=1000, data=new{ EMPLOYEE_ID = "5",EMPLOYEE_NAME = "a",SALARY = 1000,SEX = "man",PHONE_NUMBER = "111"}});
+        }
+        [HttpPost]
+        public JsonResult search01(string type, string id)
+        {
+            string searchString = id;
+            if (type.Equals("1"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.Where(s => s.VIP_ID == searchString).ToList() }); ;
+            }
+            else if (type.Equals("2"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.Where(s => s.VIP_NAME == searchString).ToList() }); ;
+            }
+            else if (type.Equals("3"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.Where(s => s.SEX == searchString).ToList() }); ;
+            }
+            else if (type.Equals("4"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.Where(s => s.PHONE_NUMBER == searchString).ToList() }); ;
+            }
+            else if (type.Equals("5"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.Where(s => s.CREDITS == long.Parse(searchString)).ToList() }); ;
+            }
+            else if (type.Equals("6"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.VIP.Where(s => s.EMPLOYEE_ID == searchString).ToList() }); ;
+            }
+            else
+            {
+                return null;
+            }
+
         }
     }
 }
