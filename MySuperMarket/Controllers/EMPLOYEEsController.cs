@@ -31,6 +31,33 @@ namespace MySuperMarket.Controllers
             return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.ToList() });
             // return Json(new{ code=0, msg="", count=1000, data=new{ EMPLOYEE_ID = "5",EMPLOYEE_NAME = "a",SALARY = 1000,SEX = "man",PHONE_NUMBER = "111"}});
         }
+        [HttpPost]
+        public JsonResult search01(string id)
+        {
+            /*
+            if (search_type.Equals("ID"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.Where(s => s.EMPLOYEE_ID == value).ToList() }); ;
+            }
+            else if (search_type.Equals("姓名"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.Where(s => s.EMPLOYEE_NAME == value).ToList() }); ;
+            }
+            else if (search_type.Equals("性别"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.Where(s => s.SEX == value).ToList() }); ;
+            }
+            else if (search_type.Equals("手机号"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.Where(s => s.PHONE_NUMBER == value).ToList() }); ;
+            }
+            else if (search_type.Equals("工资"))
+            {
+                return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.Where(s => s.SALARY == long.Parse(value)).ToList() }); ;
+            }
+            */
+            return Json(new { code = 0, msg = "", count = 1000, data = db.EMPLOYEE.Where(s => s.EMPLOYEE_ID == id).ToList() }); ;
+        }
 
         // GET: EMPLOYEEs/Details/5
         public ActionResult Details(string id)
