@@ -48,12 +48,6 @@ namespace MySuperMarket
                 url: "{controller}/{action}/{para01}/{para02}/{para03}/{para04}/{para05}/{para06}",
                 defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02 = UrlParameter.Optional, para03 = UrlParameter.Optional, para04 = UrlParameter.Optional, para05 = UrlParameter.Optional, para06=UrlParameter.Optional }
             );
-            
-            routes.MapRoute(
-                name: "sevenPara",
-                url: "{controller}/{action}/{para01}/{para02}/{para03}/{para04}/{para05}/{para06}/{para07}",
-                defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02 = UrlParameter.Optional, para03 = UrlParameter.Optional, para04 = UrlParameter.Optional, para05 = UrlParameter.Optional, para06 = UrlParameter.Optional, para07 = UrlParameter.Optional }
-            );
         }
     }
 }
