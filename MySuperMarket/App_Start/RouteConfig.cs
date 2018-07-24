@@ -19,11 +19,34 @@ namespace MySuperMarket
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                name: "twoPara",
+                url: "{controller}/{action}/{para01}/{para02}",
+                defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02=UrlParameter.Optional }
+            );
 
             routes.MapRoute(
-                name: "addType",
-                url: "{controller}/{action}/{type}/{id}",
-                defaults: new { controller = "Home", action = "Index", type= UrlParameter.Optional, id = UrlParameter.Optional }
+                name: "threePara",
+                url: "{controller}/{action}/{para01}/{para02}/{para03}",
+                defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02 = UrlParameter.Optional, para03 = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "fourPara",
+                url: "{controller}/{action}/{para01}/{para02}/{para03}/{para04}",
+                defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02 = UrlParameter.Optional, para03 = UrlParameter.Optional, para04 = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "fivePara",
+                url: "{controller}/{action}/{para01}/{para02}/{para03}/{para04}/{para05}",
+                defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02 = UrlParameter.Optional, para03 = UrlParameter.Optional, para04 = UrlParameter.Optional, para05 = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "sixPara",
+                url: "{controller}/{action}/{para01}/{para02}/{para03}/{para04}/{para05}/{para06}",
+                defaults: new { controller = "Home", action = "Index", para01 = UrlParameter.Optional, para02 = UrlParameter.Optional, para03 = UrlParameter.Optional, para04 = UrlParameter.Optional, para05 = UrlParameter.Optional, para06=UrlParameter.Optional }
             );
         }
     }
