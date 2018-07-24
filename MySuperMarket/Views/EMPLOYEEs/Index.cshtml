@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MySuperMarket.Models.EMPLOYEE>
+@model IEnumerable<MySuperMarket.Models.EMPLOYEE>
 
 @{
     ViewBag.Title = "Index";
@@ -105,7 +105,7 @@
             <!-- 内容主体区域 -->
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <div class="layui-card-header" style="padding: 10px 20px; font-size: 18px; font-weight: bold">
+                    <div class="layui-card-header" style="padding: 10px 20px; font-size: 18px; font-weight: bold" id="0001">
                         商品信息总览
                     </div>
                     <div class="layui-card-body">
@@ -124,15 +124,15 @@
                                 <div class="layui-inline">
                                     <label class="layui-form-label">输入键值</label>
                                     <div class="layui-input-inline">
-                                        <input name="search_input" autocomplete="off" placeholder="请输入" class="layui-input" type="text">
+                                        <input id="search_input" autocomplete="off" placeholder="请输入" class="layui-input" type="text">
                                     </div>
                                 </div>
-                                <button id="info-btn-search" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                                <button type="button" id="info-btn-search" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
                                 <button type="button" id="info-btn-add" class="layui-btn icon-btn"><i class="layui-icon">&#xe654;</i>添加</button>
                             </div>
                         </form>
                         <!-- 主体表格
-                         -->
+                     -->
                         <table class="layui-hide" id="info_table"></table>
                         <!--添加弹出框-->
                         <form id="info-add-form" class="layui-hide">
@@ -245,13 +245,14 @@
             <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
         </script>
         <script>
-            layui.use('table', function () {
+            layui.use(['table','element'], function () {
                 var table = layui.table;
+                var element = layui.element;
                 var $ = layui.jquery;
                 table.render({
                     elem: '#info_table'
                     , url: '/EMPLOYEEs/getJson/' //数据接口
-                    , method:"post"
+                    , method: "post"
                     , cellMinWidth: 160
                     //全局定义常规单元格的最小宽度，layui 2.2.1 新增
                     //width 支持：数字、百分比和不填写。
@@ -294,8 +295,39 @@
                         });
                     }
                 });
+                
             });
         </script>
+        <script src="~/Scripts/jquery-1.10.2.js"></script> 
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#info-btn-search").click(function () {
+                    //alert("clicked!");
+                    layui.use(['table', 'element'], function () {
+                        var table = layui.table;
+                        var element = layui.element;
+                        var $ = layui.jquery;
+                        table.render({
+                            elem: '#info_table'
+                            , url: '/EMPLOYEEs/search01/' + $("#search_input").val() //数据接口
+                            , method: "post"
+                            , cellMinWidth: 160
+                            //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                            //width 支持：数字、百分比和不填写。
+                            //你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                            , cols: [[
+                                { field: 'EMPLOYEE_ID', title: '商品编码', sort: true }
+                                , { field: 'EMPLOYEE_NAME', title: '商品名', sort: true }
+                                , { field: 'SALARY', title: '保质期', sort: true }
+                                , { field: 'SEX', title: '原价', sort: true }
+                                , { field: 'PHONE_NUMBER', title: '售价', sort: true }
+                                , { align: 'center', toolbar: '#tool_bar', title: '操作' }
+                            ]]
 
+                        });
+                    });
+                });
+            });
+        </script>
 </body>
 </html>
