@@ -159,136 +159,8 @@
                                     <!-- 主体表格部分 -->
                                     <!-- 声明一个隐藏的表格，通过render函数进行数据载入 -->
                                     <table class="layui-hide" id="vip_info_table" lay-filter="vip_info_table"></table>
-                                    <!--高级搜索弹出框-->
-                                    <form id="vip-form" lay-filter="vip-form" class="layui-hide">
-                                        <div style="margin: 20px;">
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">ID</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="vip_id" placeholder="请输入ID" type="text" class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">姓名</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="vip_name" placeholder="请输入姓名" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">性别</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="sex" placeholder="请输入性别" type="text" class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">手机号</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="phone_number" placeholder="请输入手机号" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">积分</label>
-                                                <div class="layui-input-inline" style="width: 82px;">
-                                                    <input type="text" name="score_min" placeholder="最小" autocomplete="off"
-                                                           class="layui-input">
-                                                </div>
-                                                <div class="layui-form-mid">-</div>
-                                                <div class="layui-input-inline" style="width: 82px;">
-                                                    <input type="text" name="score_max" placeholder="最大" autocomplete="off"
-                                                           class="layui-input">
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">注册员工ID</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="employee_id" placeholder="请输入注册员工ID" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-
-                                            <div class="layui-form-item">
-                                                <div class="layui-input-block">
-                                                    <button class="layui-btn layui-btn-primary close" type="button">
-                                                        取消
-                                                    </button>
-                                                    <button class="layui-btn layui-btn-normal"
-                                                            lay-filter="sale-search-form-submit" lay-submit>
-                                                        查询
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <!--添加弹出框-->
-                                    <form id="vip-add-form" lay-filter="vip-add-form" class="layui-hide">
-                                        <div style="margin: 20px;">
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">ID</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="vip_id" placeholder="请输入ID" type="text" class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">姓名</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="vip_name" placeholder="请输入姓名" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">性别</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="sex" placeholder="请输入性别" type="text" class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">手机号</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="phone_number" placeholder="请输入手机号" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">积分</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="credits" placeholder="请输入积分" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">注册员工ID</label>
-                                                <div class="layui-input-inline">
-                                                    <input name="employee_id" placeholder="请输入注册员工ID" type="text"
-                                                           class="layui-input"
-                                                           lay-verify="required" required />
-                                                </div>
-                                            </div>
-
-                                            <div class="layui-form-item">
-                                                <div class="layui-input-block">
-                                                    <button class="layui-btn layui-btn-primary close" type="button">
-                                                        取消
-                                                    </button>
-                                                    <button class="layui-btn layui-btn-normal"
-                                                            lay-filter="sale-search-form-submit" lay-submit>
-                                                        添加
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -302,177 +174,321 @@
         </div>
     </div>
     <script src="/Content/assets/libs/layui/layui.js"></script>
-    <!--修改弹出框-->
-    <script type="text/html" id="vip-model">
-        <form id="vip-update-form" lay-filter="vip-update-form" class="layui-form model-form">
+    <!--高级搜索弹出框-->
+    <script type="text/html" id="vip-sup-search-model">
+        <form id="vip-sup-search-form" lay-filter="vip-sup-search-form" class="layui-form model-form">
             <div style="margin: 20px;">
                 <div class="layui-form-item">
                     <label class="layui-form-label">ID</label>
                     <div class="layui-input-inline">
-                        <input name="VIP_ID" placeholder="请输入ID" type="text" class="layui-input"
-                               lay-verify="required" required />
+                        <input name="VIP_ID" placeholder="请输入ID" type="text"
+                               class="layui-input"
+                               lay-verify="number" />
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">姓名</label>
                     <div class="layui-input-inline">
-                        <input name="VIP_NAME" placeholder="请输入姓名" type="text" class="layui-input"
-                               lay-verify="required" required />
+                        <input name="VIP_NAME" placeholder="请输入姓名" type="text"
+                               class="layui-input" />
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">性别</label>
-                    <div class="layui-input-inline">
-                        <input name="SEX" placeholder="请输入性别" type="text" class="layui-input"
-                               lay-verify="required" required />
+                    <div class="layui-input-block">
+                        <input type="radio" name="SEX" value="男" title="男">
+                        <input type="radio" name="SEX" value="女" title="女" checked>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">手机号</label>
                     <div class="layui-input-inline">
-                        <input name="PHONE_NUMBER" placeholder="请输入手机号" type="text" class="layui-input"
-                               lay-verify="required" required />
+                        <input name="PHONE_NUMBER" placeholder="请输入手机号" type="text"
+                               class="layui-input"
+                               lay-verify="number" required />
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">积分</label>
-                    <div class="layui-input-inline">
-                        <input name="CREDITS" placeholder="请输入积分" type="text" class="layui-input"
-                               lay-verify="required" required />
+                    <div class="layui-input-inline" style="width: 82px;">
+                        <input type="text" name="SCORE_MIN" placeholder="最小" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline" style="width: 82px;">
+                        <input type="text" name="SCORE_MAX" placeholder="最大" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">注册员工ID</label>
                     <div class="layui-input-inline">
-                        <input name="EMPLOYEE_ID" placeholder="请输入注册员工ID" type="text" class="layui-input"
-                               lay-verify="required" required />
+                        <input name="EMPLOYEE_ID" placeholder="请输入注册员工ID" type="text"
+                               class="layui-input"
+                               lay-verify="number" />
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn layui-btn-primary close" type="button">取消</button>
-                        <button class="layui-btn layui-btn-normal" lay-filter="sale-search-form-submit" lay-submit>
-                            保存
+                        <button class="layui-btn layui-btn-primary close" type="button">
+                            取消
+                        </button>
+                        <button class="layui-btn layui-btn-normal"
+                                lay-filter="vip-sup-search-form-submit" lay-submit>
+                            查询
                         </button>
                     </div>
                 </div>
             </div>
         </form>
     </script>
-    <script>
-    //JavaScript代码区域
-    layui.use(['element', 'layer'], function () {
-        var element = layui.element, layer = layui.layer;
+        <!--添加弹出框-->
+        <script type="text/html" id="vip-add-model">
+            <form id="vip-add-form" lay-filter="vip-add-form" class="layui-form model-form">
+                <div style="margin: 20px;">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">ID</label>
+                        <div class="layui-input-inline">
+                            <input name="vip_id" placeholder="请输入ID" type="text" class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-inline">
+                            <input name="vip_name" placeholder="请输入姓名" type="text"
+                                   class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="男" title="男">
+                            <input type="radio" name="sex" value="女" title="女" checked>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号</label>
+                        <div class="layui-input-inline">
+                            <input name="phone_number" placeholder="请输入手机号" type="text"
+                                   class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">积分</label>
+                        <div class="layui-input-inline">
+                            <input name="credits" placeholder="请输入积分" type="text"
+                                   class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">注册员工ID</label>
+                        <div class="layui-input-inline">
+                            <input name="employee_id" placeholder="请输入注册员工ID" type="text"
+                                   class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
 
-    });
-    </script>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn layui-btn-primary close" type="button">
+                                取消
+                            </button>
+                            <button class="layui-btn layui-btn-normal"
+                                    lay-filter="vip-add-form-submit" lay-submit>
+                                添加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </script>
+        <!--修改弹出框-->
+        <script type="text/html" id="vip-update-model">
+            <form id="vip-update-form" lay-filter="vip-update-form" class="layui-form model-form">
+                <div style="margin: 20px;">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">ID</label>
+                        <div class="layui-input-inline">
+                            <input name="VIP_ID" placeholder="请输入ID" type="text" class="layui-input"
+                                   lay-verify="required" required disabled/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-inline">
+                            <input name="VIP_NAME" placeholder="请输入姓名" type="text" class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="SEX" value="男" title="男">
+                            <input type="radio" name="SEX" value="女" title="女" checked>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号</label>
+                        <div class="layui-input-inline">
+                            <input name="PHONE_NUMBER" placeholder="请输入手机号" type="text" class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">积分</label>
+                        <div class="layui-input-inline">
+                            <input name="CREDITS" placeholder="请输入积分" type="text" class="layui-input"
+                                   lay-verify="required" required />
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">注册员工ID</label>
+                        <div class="layui-input-inline">
+                            <input name="EMPLOYEE_ID" placeholder="请输入注册员工ID" type="text" class="layui-input"
+                                   lay-verify="required" required disabled/>
+                        </div>
+                    </div>
 
-    <!-- 表格操作列 -->
-    <script type="text/html" id="staff-table-bar">
-        <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
-        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-    </script>
-    <script>
-    layui.use(['form', 'table'], function () {
-        var table = layui.table;
-        var $ = layui.jquery;
-        var form = layui.form;
-        table.render({
-            elem: '#vip_info_table'
-            , url: '/VIPs/getJson/' //数据接口
-            , method: "post"
-            , cellMinWidth: 80
-            //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            //width 支持：数字、百分比和不填写。
-            //你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-            , cols: [[
-                {type: 'numbers'},
-                {field: 'VIP_ID', title: 'ID', sort: true},
-                {field: 'VIP_NAME', sort: true, title: '姓名'},
-                {field: 'SEX', sort: true, title: '性别'},
-                {field: 'PHONE_NUMBER', sort: true, title: '手机号'},
-                {field: 'CREDITS', sort: true, title: '积分'},
-                {field: 'EMPLOYEE_ID', sort: true, title: '注册员工ID'},
-                {align: 'center', toolbar: '#staff-table-bar', title: '操作'}
-            ]]
-            , page: true
-        });
-        // 高级搜索按钮点击事件
-        $(document).on('click', '#vip-btn-Hsearch', function () {
-            layer.open({
-                type: 1,
-                title: '高级搜索',
-                area: '400px',
-                offset: 'auto',
-                content: $('#vip-form').html()
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn layui-btn-primary close" type="button">取消</button>
+                            <button class="layui-btn layui-btn-normal" lay-filter="vip-update-form-submit" lay-submit>
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </script>
+        <script>
+            //JavaScript代码区域
+            layui.use(['element', 'layer'], function () {
+                var element = layui.element, layer = layui.layer;
+
             });
-        });
-        //添加按钮点击事件
-        $(document).on('click', '#vip-btn-add', function () {
-            layer.open({
-                type: 1,
-                title: '添加会员',
-                area: '400px',
-                offset: 'auto',
-                content: $('#vip-add-form').html()
-            });
+        </script>
 
-        });
-        // 工具条点击事件
-        table.on('tool(vip_info_table)', function (obj) {
-            var data = obj.data;
-            if (obj.event === 'edit') { //修改
+        <!-- 表格操作列 -->
+        <script type="text/html" id="staff-table-bar">
+            <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+        <script>
+            layui.use(['form', 'table'], function () {
+                var table = layui.table;
+                var $ = layui.jquery;
+                var form = layui.form;
+                table.render({
+                    elem: '#vip_info_table'
+                    , url: '/VIPs/getJson/' //数据接口
+                    , method: "post"
+                    , cellMinWidth: 80
+                    //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                    //width 支持：数字、百分比和不填写。
+                    //你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                    , cols: [[
+                        { type: 'numbers' },
+                        { field: 'VIP_ID', title: 'ID', sort: true },
+                        { field: 'VIP_NAME', sort: true, title: '姓名' },
+                        { field: 'SEX', sort: true, title: '性别' },
+                        { field: 'PHONE_NUMBER', sort: true, title: '手机号' },
+                        { field: 'CREDITS', sort: true, title: '积分' },
+                        { field: 'EMPLOYEE_ID', sort: true, title: '注册员工ID' },
+                        { align: 'center', toolbar: '#staff-table-bar', title: '操作' }
+                    ]]
 
-                layer.open({
-                    type: 1,
-                    title: '会员信息修改',
-                    area: '400px',
-                    offset: 'auto',
-                    content: $('#vip-model').html(),
-                    success: function () {
-                        form.val('vip-update-form', data);
+                });
+                // 高级搜索按钮点击事件
+                $(document).on('click', '#vip-btn-Hsearch', function (data) {
+                    layer.open({
+                        type: 1,
+                        title: '高级搜索',
+                        area: '400px',
+                        offset: 'auto',
+                        content: $('#vip-sup-search-model').html(),
+                        success: function () {
+                            form.val('vip-sup-search-form', data);
+                        }
+                    });
+                });
+                //添加按钮点击事件
+                $(document).on('click', '#vip-btn-add', function (data) {
+                    layer.open({
+                        type: 1,
+                        title: '添加会员',
+                        area: '400px',
+                        offset: 'auto',
+                        content: $('#vip-add-model').html(),
+                        success: function () {
+                            form.val('vip-add-form', data);
+                        }
+                    });
+
+                });
+                // 工具条点击事件
+                table.on('tool(vip_info_table)', function (obj) {
+                    var data = obj.data;
+                    if (obj.event === 'edit') { //修改
+
+                        layer.open({
+                            type: 1,
+                            title: '会员信息修改',
+                            area: '400px',
+                            offset: 'auto',
+                            content: $('#vip-update-model').html(),
+                            success: function () {
+                                form.val('vip-update-form', data);
+                            }
+
+                        });
+                        //同步更新缓存对应的值
+                        /*
+                        obj.update({
+                            "vip_id": "10002"
+                            , "vip_name": "王"
+                            , "sex": "女"
+                            , "phone_number": "12345678901"
+                            , "credits": "1456"
+                            , "employee_id": "2199330429"
+                        });*/
+                    } else if (obj.event === 'del') { //删除
+                        layer.confirm('确定要删除吗？', { title: '提示' }, function (index) {
+                            obj.del();
+                            //alert(data.VIP_ID);
+                            $.post('/VIPs/Delete01/' + data.VIP_ID);
+                            //向服务端发送删除指令
+                            layer.close(index);
+                            
+                        });
                     }
+                });
+            });
+        </script>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
 
-                });
-                //同步更新缓存对应的值
-                obj.update({
-                    "vip_id": "10002"
-                    , "vip_name": "王"
-                    , "sex": "女"
-                    , "phone_number": "12345678901"
-                    , "credits": "1456"
-                    , "employee_id": "2199330429"
-                });
-            } else if (obj.event === 'del') { //删除
-                layer.confirm('确定要删除吗？', {title: '提示'}, function (index) {
+        <script type="text/javascript">
+            //搜索按钮响应事件
+            $(document).ready(function () {
 
-                    layer.close(index);
-                    //向服务端发送删除指令
-                });
-            }
-        });
-    });
-    </script>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-           
-            $("#vip-btn-search").click(function () {
-                    
+                $("#vip-btn-search").click(function () {
                     var type = $("#type").val();
                     var val = $(" input[ name='title' ] ").val();
-                    
-                   
+
                     layui.use(['table', 'element'], function () {
-                        
+
                         var table = layui.table;
                         var element = layui.element;
                         var $ = layui.jquery;
-                        
+
                         var linkString = '/VIPs/search01/' + type + '/' + val;
-                        alert(linkString);
-                      
+                        //alert(linkString);
+
                         table.render({
                             elem: '#vip_info_table'
                             , url: linkString //数据接口
@@ -494,10 +510,151 @@
 
                         });
                     });
-                    });
                 });
-        
-    </script>
+            });
+
+        </script>
+
+        <script type="text/javascript">
+            layui.use(['form', 'table'], function () {
+                var table = layui.table;
+                var $ = layui.jquery;
+                var form = layui.form;
+                
+
+                //添加弹窗提交按钮点击事件
+                form.on('submit(vip-add-form-submit)', function (data) {
+                    var elem1 = data.field.vip_id;
+                    var elem2 = data.field.vip_name;
+                    var elem3 = data.field.sex;
+                    var elem4 = data.field.phone_number;
+                    var elem5 = data.field.credits;
+                    var elem6 = data.field.employee_id;
+
+                    $.post('/VIPs/test/' + elem1, function (data) {
+                        var IsExist = data;
+                        if (IsExist == "True") {
+                            layer.alert('会员ID已存在', {
+                               btn: ['确定']
+                              , yes: function (index) {
+                                  //layer.close(index);
+                                  layer.closeAll();
+                              }
+                            });
+                            
+                        }
+                        else {
+                            $.post('/EMPLOYEEs/test/' + elem6, function (data) {
+                                var IsExist = data;
+                                if (IsExist == "False") {                                  
+                                    layer.alert('员工ID不存在', {
+                                        btn: ['确定']
+                                      , yes: function (index) {
+                                          layer.closeAll();
+                                      }
+                                    });
+                                }
+                                else {
+                                    layui.use(['table', 'element'], function () {
+                                        var table = layui.table;
+                                        var $ = layui.jquery;
+
+                                        table.render({
+                                            elem: '#vip_info_table'
+                                            , url: '/VIPs/Create01/' + elem1 + '/' + elem2 + '/' + elem3 + '/' + elem4 + '/' + elem5 + '/' + elem6 //数据接口
+                                            , method: "post"
+                                            , cellMinWidth: 80
+                                            , cols: [[
+                                                { type: 'numbers' },
+                                                { field: 'VIP_ID', title: 'ID', sort: true },
+                                                { field: 'VIP_NAME', sort: true, title: '姓名' },
+                                                { field: 'SEX', sort: true, title: '性别' },
+                                                { field: 'PHONE_NUMBER', sort: true, title: '手机号' },
+                                                { field: 'CREDITS', sort: true, title: '积分' },
+                                                { field: 'EMPLOYEE_ID', sort: true, title: '注册员工ID' },
+                                                { align: 'center', toolbar: '#staff-table-bar', title: '操作' }
+                                            ]]
+                                        });
+                                    });
+                                    layer.closeAll();
+                                }
+                            });
+                        }
+                    })
+                    return false;
+                });
+
+                //修改弹窗提交按钮点击事件
+                form.on('submit(vip-update-form-submit)', function (data) {
+                    var elem1 = data.field.VIP_ID;
+                    var elem2 = data.field.VIP_NAME;
+                    var elem3 = data.field.SEX;
+                    var elem4 = data.field.PHONE_NUMBER;
+                    var elem5 = data.field.CREDITS;
+                    var elem6 = data.field.EMPLOYEE_ID;
+
+                    layui.use(['table', 'element'], function () {
+                        var table = layui.table;
+                        var $ = layui.jquery;
+
+                        table.render({
+                            elem: '#vip_info_table'
+                            //, url: '/VIPs/Create01/' + elem1 + '/' + elem2 + '/' + elem3 + '/' + elem4 + '/' + elem5 + '/' + elem6 //数据接口
+
+                            , method: "post"
+                            , cellMinWidth: 80
+                            , cols: [[
+                                { type: 'numbers' },
+                                { field: 'VIP_ID', title: 'ID', sort: true },
+                                { field: 'VIP_NAME', sort: true, title: '姓名' },
+                                { field: 'SEX', sort: true, title: '性别' },
+                                { field: 'PHONE_NUMBER', sort: true, title: '手机号' },
+                                { field: 'CREDITS', sort: true, title: '积分' },
+                                { field: 'EMPLOYEE_ID', sort: true, title: '注册员工ID' },
+                                { align: 'center', toolbar: '#staff-table-bar', title: '操作' }
+                            ]]
+                        });
+                    });
+
+                    //return false;
+                });
+                //高级搜索提交按钮事件
+                form.on('submit(vip-sup-search-form-submit)', function (data) {
+                    var elem1 = data.field.VIP_ID;
+                    var elem2 = data.field.VIP_NAME;
+                    var elem3 = data.field.SEX;
+                    var elem4 = data.field.PHONE_NUMBER;
+                    var elem5 = data.field.SCORE_MIN;
+                    var elem6 = data.field.SCORE_MAX;
+                    var elem7 = data.field.employee_id;
+
+                    layui.use(['table', 'element'], function () {
+                        var table = layui.table;
+                        var $ = layui.jquery;
+
+                        table.render({
+                            elem: '#vip_info_table'
+                            //, url: '/VIPs/Create01/' + elem1 + '/' + elem2 + '/' + elem3 + '/' + elem4 + '/' + elem5 + '/' + elem6 //数据接口
+
+                            , method: "post"
+                            , cellMinWidth: 80
+                            , cols: [[
+                                { type: 'numbers' },
+                                { field: 'VIP_ID', title: 'ID', sort: true },
+                                { field: 'VIP_NAME', sort: true, title: '姓名' },
+                                { field: 'SEX', sort: true, title: '性别' },
+                                { field: 'PHONE_NUMBER', sort: true, title: '手机号' },
+                                { field: 'CREDITS', sort: true, title: '积分' },
+                                { field: 'EMPLOYEE_ID', sort: true, title: '注册员工ID' },
+                                { align: 'center', toolbar: '#staff-table-bar', title: '操作' }
+                            ]]
+                        });
+                    });
+
+                    //return false;
+                });
+            });
+        </script>
 </body>
 
 </html>
